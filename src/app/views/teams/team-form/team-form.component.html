@@ -1,0 +1,26 @@
+<app-breadcrumb title="Crear equipo"></app-breadcrumb>
+
+<section class="content">
+    <div class="container">
+        <div class="card card card-outline card-primary elevation-2">
+            <div class="card-body">
+                <form [formGroup]="frm">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="team" class="control-label">* Equipo</label>
+                            <input type="text" class="form-control" formControlName="team">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="button-group float-right">
+                                <a class="btn btn-primary" (click)="guardar()"><i class="fas fa-save"></i> Guardar</a>
+                                <a [routerLink]="['/teams']" class="btn btn-secondary"><i class="fas fa-backspace"></i> Cancelar</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,48 @@
+<div class="login-box">
+    <div class="card card-outline card-primary">
+      <div class="card-header text-center">
+        <a href="login" class="h1">
+          <img src="../../../assets/images/logo.png" alt="Logo Gaffel" height="70px">
+        </a>
+      </div>
+      <div class="card-body">
+        <p class="login-box-msg">Ingresa los datos para iniciar sesión</p>
+        
+        <form [formGroup]="frmLogin" (submit)="iniciarSesion()">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Usario" formControlName="usuario">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                  Recuerdame
+                </label>
+              </div>
+            </div>
+            <div class="col-4">
+              <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+            </div>
+          </div>
+        </form>
+        
+        <p class="mb-1">
+          <a [routerLink]="['/register']">Registro nuevo usuario</a>
+        </p>
+      </div>
+    </div>
+  </div>

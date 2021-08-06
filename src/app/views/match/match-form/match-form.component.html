@@ -1,0 +1,52 @@
+<app-breadcrumb title="Crear partido"></app-breadcrumb>
+
+<section class="content">
+    <div class="container">
+        <div class="card card card-outline card-primary elevation-2">
+            <div class="card-body">
+                <form [formGroup]="frm">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="usuario" class="control-label">* Usuario</label>
+                            <select class="form-control" formControlName="usuario">
+                                <option [value]="item.id" *ngFor="let item of listUsers">{{ item.nombre }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="local" class="control-label">* Equipo local</label>
+                            <select class="form-control" formControlName="local">
+                                <option [value]="item.id" *ngFor="let item of listTeams">{{ item.nombre }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="visitante" class="control-label">* Equipo visitante</label>
+                            <select class="form-control" formControlName="visitante">
+                                <option [value]="item.id" *ngFor="let item of listTeams">{{ item.nombre }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="fecha" class="control-label">* Fecha</label>
+                            <input type="date" class="form-control" formControlName="fecha">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="goleslocal" class="control-label">* Goles local</label>
+                            <input type="number" class="form-control" formControlName="goleslocal">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="golesvisitante" class="control-label">* Goles visitante</label>
+                            <input type="number" class="form-control" formControlName="golesvisitante">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="button-group float-right">
+                                <a class="btn btn-primary" (click)="guardar()"><i class="fas fa-save"></i> Guardar</a>
+                                <a [routerLink]="['/matchs']" class="btn btn-secondary"><i class="fas fa-backspace"></i> Cancelar</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
